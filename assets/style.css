@@ -1,0 +1,175 @@
+
+* {
+  box-sizing: border-box;
+  
+}
+
+body {
+  margin: 0;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #444c4a;
+  font-family: monospace, monospace
+
+  
+}
+
+
+header {
+  padding: 40px;
+  text-align: center;
+  background:  #260000;
+  color: #ebf7ff;
+  width: 100%;
+  font-size: 60px;
+  
+}
+
+.container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer {
+  position: relative;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #000011;
+  
+ 
+}
+
+.timer-text{
+  font-size: 30px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #730000;
+  border-style: solid;
+  border-color: #000011 ;
+  border-radius: 20px;
+  padding: 20px;
+  
+  
+  
+}
+
+.quiz-text {
+  border-radius: 10px;
+  background-color: #000011;
+  width: 70em;
+
+  
+}
+
+.quiz-container {
+  
+  position: relative;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #ebf7ff;;
+  
+}
+
+.question {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+
+  
+
+}
+
+.answers {
+  margin: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  
+}
+
+.answers label {
+  font-weight: 700;
+  display: flex;
+  font-size: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+   
+}
+
+.button {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+  
+}
+
+button { 
+  
+  font-family: monospace;
+  cursor: pointer;
+  font-size: 2em;
+  letter-spacing: 0.21px;
+  line-height: 16px;
+  max-width: 255px;
+  padding: 20px 52px;
+  text-align: center;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  margin-top: 0.6em;
+  background-color: #330000 ;
+  color: #800000;
+  border-radius: 50px;
+  
+}
+
+
+.slide{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+ 
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+  
+}
+
+
+#results {
+  text-align: center;
+  font-size: 45px;
+  color: #5c748c;
+}
+
+@media screen and (max-width: 700px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+}
+
+
