@@ -16,7 +16,7 @@
   </header>
 <main>
 <!--homepage; nothing else will be here until the START button is clicked-->
-  <div class="homepage hide">
+  <div class="homepage" id="homepage">
     <div class="intro">
     <h3> Test Your Scary Movie Knowledge</h3>
     <p>Answer 10 questions within the 30 second time limit. For every wrong answer, 5 seconds will be deducted from your total time.</p>
@@ -24,7 +24,7 @@
     <button id="startBtn">Start</button>
   </div>
 <!--We are starting the main portion of the quiz here; we want to hide the timer, Questions, and buttons-->
-  <section class="torso hide">
+  <section class="quiz-start" id="quiz-start">
 <!--set up timer-->
    <div class="timer">
       <div class="timer-text">
@@ -32,7 +32,7 @@
         seconds remaining
       </div>
     </div>
-  <div class="neurons">
+   <div class="neurons">
     <div class ="quiz-text">
       <div class="quiz-container">
         <div id="quiz"></div>
@@ -45,7 +45,7 @@
     <button id="submit">Submit Quiz</button>
   </section>
 </section>
-<section class="endQuiz">
+<section class="quiz-results" id="quiz-results">
   <div class="results-container">
     <h3>The End ....?</h3>
     <p>You did it! Enter your initials with your score below and see how you did.</p>
@@ -60,7 +60,7 @@
       <h3>CHAMPIONS</h3>
         <ul id="highscore-list"></ul>
     </div>
-</div>
+ </div>
 </section> 
 </main>
 
