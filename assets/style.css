@@ -25,6 +25,14 @@ header {
   
 }
 
+div {
+  display: block;
+}
+
+.hide{
+  display: none;
+}
+
 .container {
   height: 200px;
   display: flex;

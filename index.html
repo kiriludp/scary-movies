@@ -16,56 +16,47 @@
   </header>
 <main>
 <!--homepage; nothing else will be here until the START button is clicked-->
-  <div class="homepage hide">
+  <div id="quiz-start">
     <div class="intro">
     <h3> Test Your Scary Movie Knowledge</h3>
     <p>Answer 10 questions within the 30 second time limit. For every wrong answer, 5 seconds will be deducted from your total time.</p>
     </div>
-    <button id="startBtn">Start</button>
+    <button id="start-button">Start</button>
   </div>
 <!--We are starting the main portion of the quiz here; we want to hide the timer, Questions, and buttons-->
-  <section class="torso hide">
+<div id="quiz-container" class="hide">
 <!--set up timer-->
-   <div class="timer">
-      <div class="timer-text">
-        <div class="timer-count">30</div>
+   <div id="timer">
+      <div id="timer-text">
+        <div id="timer-count">30</div>
         seconds remaining
       </div>
     </div>
-  <div class="neurons">
-    <div class ="quiz-text">
-      <div class="quiz-container">
-        <div id="quiz"></div>
-      </div>
-    </div>
+    
+      <h2 id="question-title"></h2>
+      <div id="answers"></div>
+  <!-- <button id="next-button">Next Question</button> -->
+    <button id="submit-button">Submit Quiz</button>
+</div>
+<div id="quiz-end" class="hide">
+  <h3>The End ....?</h3>
+  <p>You did it! Enter your initials with your score below and see how you did.</p>
+  <div id="results">
   </div>
-  <section class="button">
-    <button id="previous">Previous Question</button>
-    <button id="next">Next Question</button>
-    <button id="submit">Submit Quiz</button>
-  </section>
-</section>
-<section class="endQuiz">
-  <div class="results-container">
-    <h3>The End ....?</h3>
-    <p>You did it! Enter your initials with your score below and see how you did.</p>
-    <div id="results">
-    </div>
-    <div class = "enter">
+  <div id = "record-score">
       <label for = "initials">Enter Your Initials:</label>
       <input type="text" id="initials">
-      <button id="submitScore">Submit</button>
-    </div>
-    <div class="high-results">
-      <h3>CHAMPIONS</h3>
-        <ul id="highscore-list"></ul>
-    </div>
+      <button id="score-button">Record Score</button>
+  </div>
+  <div id="highscores">
+    <h3>CHAMPIONS</h3>
+    <ul id="highscore-list"></ul>
+  </div>
 </div>
-</section> 
+</div> 
 </main>
 
-
-<script src="assets\script.js"></script>
+<script src="assets\testcode.js"></script>
 
 </body>
 </html>
