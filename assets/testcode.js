@@ -1,3 +1,4 @@
+
 const myQuestions = [
   {
     question: "What year was the original `The Texas Chainsaw Massacre` released?",
@@ -42,28 +43,24 @@ const myQuestions = [
   },
 ];
 
+
 const startButton = document.querySelector("#start-button");
-const submitButton = document.querySelector("#submit-button");
-const nextButton = document.querySelector("#next-button");
 const choicesElement = document.querySelector("#choices");
 const quizContainer = document.querySelector("#quiz-container");
 const timerElement = document.querySelector("#timer-count");
-const recordScore = document.querySelector("#record-score");
-const highscoresList = document.querySelector("#highscore-list");
-const initialsElement = document.querySelector("#initials");
-const homepage = document.querySelector('#quiz-start');
+const feedbackElement = document.querySelector("#feedback");
+const submitButton = document.querySelector("#submit-button");
+const homepage = document.querySelector("#quiz-start");
 
-
-let timerCount = 30;
+let timerCount = myQuestions.length * 5; // initial quiz time in seconds
 let questionIndex = 0;
 let timerId;
 let highscores = [];
 
-
 function startQuiz() {
   homepage.style.display = "none";
   quizContainer.classList.remove("hide");
-  timerId = setInterval(startTimer, 1000);
+  timerId = setInterval(clockTick, 1000);
   timerElement.textContent = timerCount;
   displayQuestion();
 }
@@ -74,7 +71,7 @@ function displayQuestion() {
   const choices = question.choices
     .map(
       (choice, i) => `
-      <label> <input type="radio" class="choice" value="${choice}">
+    <label><input type="radio" class="choice" value="${choice}" >
       ${i + 1}. ${choice}
     </label>
   `
@@ -83,12 +80,14 @@ function displayQuestion() {
   choicesElement.innerHTML = choices;
 }
 
-function questionClick(radio) {
-  const answer = radio.value;
-  if (answer !== myQuestions[questionIndex].answer) {
-    timerCount = Math.max(timerCount - 5, 0); // subtract 5 seconds for wrong answers
+function answerCheck() {
+  const answer = (answerContainer.querySelector(selector) || {}).value;
+  let numCorrect = 0;
+  if (answer === myQuestions[questionIndex].answer) {
+    numCorrect++;
+  } else {
+    timerCount = Math.max(timerCount -5, 0);
   }
-  questionIndex++;
   if (questionIndex === myQuestions.length) {
     quizEnd();
   } else {
@@ -96,50 +95,22 @@ function questionClick(radio) {
   }
 }
 
+function nextQuestion()
+  var selector = `input[name= myQuestions${questionIndex}.answer]:checked`;
+  if (questionIndex === myQuestions.length)
 
 
 function quizEnd() {
   clearInterval(timerId);
-  timerElement.textContent= timerCount;
+  timerElement.textContent = timerCount;
   document.querySelector("#quiz-end").classList.remove("hide");
-  recordScore.classList.remove("hide");
+  
 }
 
-function startTimer() {
+function clockTick() {
   timerCount--;
   timerElement.textContent = timerCount;
-  if (timerCount === 0)
-  quizEnd();
+  if (timerCount === 0) {
+    quizEnd();
+  }
 }
-
-function scoreRecord() {
-  const initials = initialsElement.value.trim();
-  if (!initials) return;
-  const highscore = { initials, score: timeCounter};
-  highscores.push(highscore);
-
-  highscores.sort((a, b) => b.score - a.score);
-  const highscoresHtml = highscores
-    .map((score, i) => `<li>${i + 1}. ${score.initials} - ${score.score}</li>`)
-    .join("");
-  highscoresList.innerHTML = highscoresHtml;
-  quizContainer.classList.add("hide");
-  document.querySelector("#quiz-end").classList.add("hide");
-  recordScore.classList.remove("hide");
-}
-
-function showHighscores() {
-  highscores = JSON.parse(localStorage.getItem("highscores")) || [];
-  const scores = highscores
-    .map(
-      (score) => `
-    <li>${score.initials} - ${score.score}</li>
-  `
-    )
-    .join("");
-  highscoresList.innerHTML = scores;
-}
-
-startButton.addEventListener("click", startQuiz);
-submitButton.addEventListener("click", quizEnd);
-nextButton.addEventListener("click", displayQuestion);
