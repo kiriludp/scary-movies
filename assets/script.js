@@ -14,7 +14,7 @@ const myQuestions = [
     answer: "John Carpenter"
   },
   {
-    choices: "What movie is the following quote from? `They're coming to get you, Barbara.",
+    question: "What movie is the following quote from? `They're coming to get you, Barbara.",
     choices: [ "Shaun of the Dead", "Dawn of the Dead","Night of the Living Dead"
   ],
     answer: "Night of the Living Dead"

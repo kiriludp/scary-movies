@@ -14,8 +14,50 @@ body {
   
 }
 
+h3 {
+  text-align: center;
+  
+}
+
+p {
+  margin: 0 50px 0 50px;
+}
+
 #options {
-  background-color: aqua;
+  max-height: 75px;
+  max-width: 200px;
+  min-width: 200px;
+  font-size: 20px;
+  padding: 10px;
+  
+}
+
+#choices {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  
+}
+
+#timer {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  margin: 3% 0 3% 8%;
+  
+  
+}
+
+#timer-text {
+  border-style: solid;
+  border-radius: 50%;
+  align-items: center;
+  padding: 20px;
+  
+}
+
+#timer-count {
+  text-align: center;
 }
 
 header {
@@ -31,6 +73,21 @@ header {
 div {
   display: block;
 }
+
+#quiz-start {
+  display: flex;
+  text-align: center;
+ 
+}
+
+#question-title {
+  font-size: 30px;
+  text-align: center;
+  
+}
+
+
+
 
 .hide{
   display: none;
@@ -99,34 +156,12 @@ div {
 
 }
 
-.answers {
-  margin: 40px;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  
-  
-}
+#start-button {
+  position:absolute;
+  margin: 0;
+  top: 40%;
+  left: 10%;
 
-.answers label {
-  font-weight: 700;
-  display: flex;
-  font-size: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  
-   
-}
-
-.button {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
- 
   
 }
 
@@ -147,35 +182,17 @@ button {
   color: #800000;
   border-radius: 50px;
   
-}
-
-
-.slide{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s;
- 
-}
-.active-slide{
-  opacity: 1;
-  z-index: 2;
   
 }
 
-
 #results {
   text-align: center;
-  font-size: 45px;
+  font-size: 30px;
   color: #5c748c;
 }
+
+
+
 
 @media screen and (max-width: 700px) {
   .row, .navbar {   
